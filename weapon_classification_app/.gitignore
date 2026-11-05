@@ -1,3 +1,5 @@
 static/uploads/
 model.pt
 __pycache__/
+.venv/
+
