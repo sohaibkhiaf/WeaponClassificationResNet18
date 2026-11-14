@@ -17,7 +17,7 @@ The primary goal of this project is to design, train, and deploy an automated im
 This project demonstrates a complete machine learning lifecycle:
 - Custom Architecture Implementation: Building the ResNet-18 residual network and its BasicBlock modules from scratch using PyTorch (torch.nn) without relying on pre-built library backbones.
 - Model Training & Evaluation: Processing custom image datasets, optimizing weights, tracking training and testing metrics, and visualizing performance via confusion matrices and loss and accuracy curves.
-- Web Deployment: Serving the trained PyTorch model (model.pt) through a user-friendly Flask web interface where users can upload images and receive instant predictions with confidence scores.
+- Web Deployment: Serving the trained PyTorch model (model_state_dict.pt) through a user-friendly Flask web interface where users can upload images and receive instant predictions with confidence scores.
 
 ---
 
@@ -94,7 +94,7 @@ The training pipeline is implemented in main.py and follows these systematic ste
 - Plots side-by-side Accuracy and Loss curves across all epochs.
 - Generates a Multiclass Confusion Matrix across the test dataset.
 - Visualizes a 3x3 grid of random test samples comparing predicted labels against ground-truth labels.
-- Saves the trained model weights to checkpoints/model_state_dict.pt (and deployed in the web app as weapon_classification_app/model.pt).
+- Saves the trained model weights to checkpoints/model_state_dict.pt (and deployed in the web app as weapon_classification_app/model_state_dict.pt).
 
 ---
 
@@ -110,7 +110,7 @@ WeaponClassificationResNet18/
 │   ├── templates/index.html       # Web interface template
 │   ├── app.py                     # Flask server and prediction route
 │   ├── model.py                   # ResNet-18 definition and model loader
-│   ├── model.pt                   # Pre-trained model weights
+│   ├── model_state_dict.pt                   # Pre-trained model weights
 │   ├── Screenshot-app.png         # Screenshot of the web application
 │   ├── Screenshot-classification.png # Screenshot of classification result
 │   └── requirements.txt           # Web app dependencies
@@ -142,7 +142,7 @@ python main.py
 ```
 
 ### 4. Run the Web Application
-To launch the Flask web app using the pre-trained model (model.pt):
+To launch the Flask web app using the pre-trained model (model_state_dict.pt):
 ```bash
 cd weapon_classification_app
 python app.py

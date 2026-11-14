@@ -21,7 +21,7 @@ device = torch.device(
 )
 
 model = load_model(
-    "model.pt",
+    "model_state_dict.pt",
     device
 )
 
